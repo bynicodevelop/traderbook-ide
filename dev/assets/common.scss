@@ -1,0 +1,275 @@
+$dark-black: #2B2B2B;
+$dark-gray: #363636;
+$dark-font-color: #CCC;
+
+html {
+  height: 100%;
+
+  body {
+    overflow:hidden;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    h1, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .float-right {
+      float: right;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+
+        a {
+          color: $dark-font-color;
+          text-decoration: none;
+        }
+      }
+    }
+
+    header {
+      background: $dark-black;
+      border-bottom: 1px solid $dark-black;
+      color: $dark-font-color;
+
+      >ul {
+        li {
+          font-size: .9rem;
+          display: inline-block;
+          padding: 5px 10px;
+        }
+      }
+
+      #tabs-controls {
+        .tab {
+          font-size: 1rem;
+          margin-top: 8px;
+          background-color: $dark-gray;
+          border-left: 1px solid $dark-black;
+          margin-right: 5px;
+
+          &:hover {
+            .fa-times {
+              transition: visibility 2s;
+              visibility: visible;
+            }
+          }
+        }
+
+        .active {
+          border-left: 1px solid #2471A3;
+        }
+
+        .read {
+          font-style: italic;
+        }
+
+        .fa-times {
+          margin-left: 5px;
+          visibility: hidden;
+        }
+
+        .fa-circle {
+          margin-right: 5px;
+          font-size: .5rem;
+          color: #A93226;
+        }
+      }
+
+      #main-menu {
+        li {
+          margin: 0;
+          padding: 0;
+
+          >a {
+            margin: 9px 10px;
+            display: block;
+          }
+
+          &:hover {
+            >ul {
+              display: block;
+            }
+          }
+
+          >ul {
+            position: absolute;
+            background-color: $dark-black;
+            border: 1px solid $dark-gray;
+            display: none;
+
+            >li {
+              margin: 0;
+              padding: 0;
+              display: block;
+
+              &.separator {
+                border-bottom: 1px solid $dark-gray;
+              }
+
+              >a {
+                padding: 5px 10px 5px 20px;
+                line-height: 1.7rem;
+                width: 150px;
+                display: block;
+
+                &:hover {
+                  background-color: $dark-gray;
+                }
+
+                span {
+                  display: block;
+                  float: right;
+                  font-size: 1rem;
+                  color: #CCCCCC;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .sub-header {
+        background: $dark-gray;
+        height: 40px;
+        clear: both;
+
+        ul {
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin: 5px 10px;
+            background-color: $dark-black;
+            border-radius: 4px;
+
+            a {
+              padding: 6px 10px;
+              display: inline-block;
+              color: $dark-font-color;
+            }
+          }
+        }
+      }
+    }
+
+
+    aside {
+      width: 300px;
+      background: $dark-black;
+      float: left;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+        background-color: $dark-gray;
+        border: 1px solid $dark-black;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: 0 0 0 rgba(0,0,0,.3);
+        background-color: $dark-black;
+      }
+
+      ol {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 22px;
+        list-style: none;
+
+        li {
+          cursor: pointer;
+
+          .folder, .file {
+            margin-bottom: 6px;
+          }
+
+          a {
+            color: $dark-font-color;
+            text-decoration: none;
+
+            i {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      >ol {
+        margin-top: 10px;
+      }
+    }
+
+    section {
+      overflow: hidden;
+      background: $dark-gray;
+      margin-left: 300px;
+
+      .monaco-editor {
+        .monaco-editor-background {
+          background-color: $dark-gray !important;
+        }
+
+        .current-line {
+          border: 2px solid $dark-gray !important;
+        }
+      }
+
+      .panel {
+        display: none;
+        position: relative;
+        height: 100%;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+    &#about {
+      background-color: $dark-gray;
+
+      header {
+        h1 {
+          padding: 20px 0;
+          text-align: center;
+
+          small {
+            display: block;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      section {
+        margin: 0;
+        padding: 0 10px;
+
+        p {
+          color: #CCCCCC;
+          text-align: right;
+
+          &#power-by {
+            position: absolute;
+            bottom: 2px;
+            right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
