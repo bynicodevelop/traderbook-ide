@@ -15,6 +15,14 @@ npm run build
 npm start
 ```
 
+# Compilation
+
+Création des différents exécutables.
+
+```bash
+npm run dist
+```
+
 # Sources
 
 - Electron

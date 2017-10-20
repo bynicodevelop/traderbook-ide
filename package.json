@@ -1,11 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "traderbook-ide",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Editeur de code extra léger",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:watch": "./node_modules/.bin/gulp sass:watch"
+    "build:watch": "./node_modules/.bin/gulp sass:watch",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -15,10 +17,20 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "build": {
+    "appId": "fr.nico-develop.traderbook",
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "author": "Nicolas MORICET <moricet.nicolas@free.fr>",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.7.8",
+    "electron-builder": "^19.37.2",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.4.0",
     "gulp-sass": "^3.1.0"
