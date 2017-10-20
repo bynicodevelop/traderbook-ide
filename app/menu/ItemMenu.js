@@ -43,7 +43,7 @@ module.exports = class ItemMenu {
 
         if(this._template.cmd !== undefined) {
             const span = document.createElement('span')
-            const cmdText = document.createTextNode('Ctrl + Q')
+            const cmdText = document.createTextNode(this._template.cmd)
             span.appendChild(cmdText)
             a.appendChild(span)
         }
